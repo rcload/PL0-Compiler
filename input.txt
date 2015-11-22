@@ -1,0 +1,33 @@
+/* Any text enclosed like this is a comment, and is ignored by the compiler */
+const j=1; /* Constants must be declared in the const section of the procedure, this section is not required */
+var  x,y,z,v,w; /* Variables must be declared after any constants */
+procedure a; /* Any nested procedures should be declared before the code block of the parent procedure */
+var x,y,u,v;
+  procedure b;
+    var y,z,v;
+    procedure c;
+      var y,z;
+      begin /* The code for a procedure should be enclosed by ‘begin’ and ‘end’ */ 
+        z:=j;
+        x:=y+z+w; /* The language supports +,-,*,/, and % (modulus) operations */
+      end;
+    begin
+      if j < 5 then /* When using if-then statements, you do not add a semicolon to the end of any line except the last, unless your if statement includes ‘begin’ and ‘end’ */
+        y:=x+u+w
+      else
+        y:=x+u;
+      call c; 
+    end;
+  begin
+    z:=0;
+    while z < 2 do /* Similar to if-then, while statements also only have semicolons at the end */
+      z:=z+1;
+    u:=z+w;
+    call b;
+  end;
+begin
+  x:=1; y:=2; z:=3; v:=4; w:=5;
+  x:=v+w;
+  write z;
+  call a;
+end.
